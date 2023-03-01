@@ -14,31 +14,50 @@ Jobs.belongsTo(Category,{
 
 
 Jobs.belongsToMany(User,{
-
-    through:UserJobs,
-    unique: false,
+    through: UserJobs,
     foreignKey: 'jobs_id',
-    // through: {
-    // model:UserJobs,
-    // unique: false,
-    // foreignKey: 'jobs_id',
-    // }    
-    
 });
 
 User.belongsToMany(Jobs,{
     through: UserJobs,
-     unique: false,
-    foreignKey: 'user_id',
+    foreignKey: 'user_id'
+});
 
-    // through: {
-    //     model:UserJobs,
-    //     unique: false,
-    //     foreignKey: 'user_id',
-    //     }   
+
+
+
+
+
+
+
+
+
+// Jobs.belongsToMany(User,{
+
+//     through:UserJobs,
+//     // unique: false,
+//     foreignKey: 'jobs_id',
+//     // through: {
+//     // model:UserJobs,
+//     // unique: false,
+//     // foreignKey: 'jobs_id',
+//     // }    
+    
+// });
+
+// User.belongsToMany(Jobs,{
+//     through: UserJobs,
+//     //  unique: false,
+//     foreignKey: 'user_id',
+
+//     // through: {
+//     //     model:UserJobs,
+//     //     unique: false,
+//     //     foreignKey: 'user_id',
+//     //     }   
    
     
-});
+// });
 
 module.exports = { User, Category, UserJobs, Jobs };
 
